@@ -3,7 +3,7 @@
 /**
  * @file display_win.h
  * @author @SwordofMorning / xjt.include@gmail.com
- * @brief 
+ * @brief console display interface of Windows
  * @version 0.1
  * @date 2023-01-20
  * 
@@ -13,7 +13,7 @@
 
 #include <Windows.h>
 #include <iostream>
-#include "display_config.h"
+#include <stdint.h>
 
 class displayWin {
 protected:
@@ -23,17 +23,21 @@ protected:
     /* The origin when the image was last drawn */
     int m_lastPosX, m_lastPosY;
 
-    void gotoXY(int x, int y);
-
-    /* Clear the old image */
-    void clear();
-
-    /* Draw a new image */
-    void draw();
+    /* Draw pixel on console */
+    void setPixel(uint8_t r, uint8_t g, uint8_t b);
 
 public:
     /* Constructor */
     displayWin(const int& width, const int& height);
 
-    int operator()(int x, int y);
+    /**
+     * @brief change image's position, 
+     * first clear last image via setPixel(0, 0, 0), 
+     * next draw new image by setPixel(255, 255, 255).
+     * 
+     * @param x new x coordinate
+     * @param y new y coordinate
+     * @return 0, success; others fail.
+     */
+    void operator()(int x, int y);
 };

@@ -7,36 +7,33 @@ displayWin::displayWin(const int& width, const int& height) :
     m_lastPosY = 0;
 }
 
-void displayWin::gotoXY(int x, int y)
+void displayWin::setPixel(uint8_t r, uint8_t g, uint8_t b)
 {
-    COORD pos;
-	HANDLE hOutput;
-	pos.X = x;
-	pos.Y = y;
-	hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleCursorPosition(hOutput, pos);
-}
+    HWND myConsole = GetConsoleWindow();
+    HDC myDC = GetDC(myConsole);
+    COLORREF color = RGB(r, g, b);
 
-void displayWin::clear()
-{
-    for (int i = 0; i < m_width; i += DISP_SPACING)
+    for (int i = 0; i < m_width; ++i)
     {
-        for (int j = 0; i < m_height; ++j)
+        for (int j = 0; j < m_height; ++j)
         {
-            this->gotoXY(i, j);
-            std::cout << " ";
+            SetPixel(myDC,              // handle
+                    m_lastPosX + i,     // X pos
+                    m_lastPosY + j,     // Y pos
+                    color);             // color
         }
     }
+
+    ReleaseDC(myConsole, myDC);
 }
 
-void displayWin::draw()
+void displayWin::operator()(int x, int y)
 {
-    for (int i = 0; i < m_width; i += DISP_SPACING)
-    {
-        for (int j = 0; i < m_height; ++j)
-        {
-            this->gotoXY(i, j);
-            std::cout << DISP_ELEMENT;
-        }
-    }
+    /* setp 1 : clear last image */
+    setPixel(0, 0, 0);
+
+    /* setp 2 : draw new image */
+    m_lastPosX = x;
+    m_lastPosY = y;
+    setPixel(255, 255, 255);
 }

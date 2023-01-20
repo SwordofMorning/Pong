@@ -1,6 +1,7 @@
 SET(
     SRC_LIST
-    display/console.cpp
+    display/display_win.cpp
+    display/display.cpp
     main.cpp
 )
 
