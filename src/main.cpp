@@ -1,7 +1,8 @@
 #include <iostream>
-#include "win_graphic/console.h"
+#include "display/display.h"
 
 int main()
 {
-    func();
+    
+    return 0;
 }

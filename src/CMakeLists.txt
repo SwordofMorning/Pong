@@ -1,6 +1,6 @@
 SET(
     SRC_LIST
-    win_graphic/console.cpp
+    display/console.cpp
     main.cpp
 )
 
