@@ -10,7 +10,7 @@ void display::operator()(int x, int y)
 {
 #if DISPLAY_API_WIN
 
-    m_dispW(x, y);
+    // m_dispW(x, y);
 
 #elif DISPLAY_API_LIN
 

@@ -17,14 +17,9 @@
 
 class displayWin {
 protected:
-    /* image width and height */
-    const int m_width, m_height;
-
-    /* The origin when the image was last drawn */
-    int m_lastPosX, m_lastPosY;
-
     /* Draw pixel on console */
-    void setPixel(uint8_t r, uint8_t g, uint8_t b);
+    void setPixel(int* arrayX, int* arrayY, int length, 
+                uint8_t r, uint8_t g, uint8_t b);
 
 public:
     /* Constructor */
@@ -39,5 +34,6 @@ public:
      * @param y new y coordinate
      * @return 0, success; others fail.
      */
-    void operator()(int x, int y);
+    void operator()(int* arrayX, int* arrayY, int length, 
+                    uint8_t r, uint8_t g, uint8_t b);
 };
