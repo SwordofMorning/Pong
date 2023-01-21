@@ -1,16 +1,16 @@
 #include "display.h"
 
-display::display(const int& width, const int& height) :
-                m_dispW(width, height)
+display::display()
 {
     // nothing
 }
 
-void display::operator()(int x, int y)
+void display::operator()(int* arrayX, int* arrayY, int length, 
+                        uint8_t r, uint8_t g, uint8_t b)
 {
 #if DISPLAY_API_WIN
 
-    // m_dispW(x, y);
+    m_dispW(arrayX, arrayY, length, r, g, b);
 
 #elif DISPLAY_API_LIN
 

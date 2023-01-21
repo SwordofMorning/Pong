@@ -18,7 +18,8 @@ class display {
 private:
     displayWin m_dispW;
 public:
-    display(const int& width, const int& height);
+    display();
 
-    void operator()(int x, int y);
+    void operator()(int* arrayX, int* arrayY, int length, 
+                    uint8_t r, uint8_t g, uint8_t b);
 };

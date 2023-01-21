@@ -24,6 +24,10 @@ protected:
     /* display interface */
     display m_disp;
 
+    void clearLastImage();
+
+    void drawNewImage();
+
 public:
     /* constructor */
     actor(int* posX, int* posY, int* lastX, int* lastY);

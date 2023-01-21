@@ -1,12 +1,12 @@
 #include "display_win.h"
 
-displayWin::displayWin(const int& width, const int& height)
+displayWin::displayWin()
 {
     // do nothing
 }
 
-void displayWin::setPixel(int* arrayX, int* arrayY, int length, 
-                        uint8_t r, uint8_t g, uint8_t b)
+void displayWin::operator()(int* arrayX, int* arrayY, int length, 
+                            uint8_t r, uint8_t g, uint8_t b)
 {
     HWND myConsole = GetConsoleWindow();
     HDC myDC = GetDC(myConsole);
@@ -21,10 +21,4 @@ void displayWin::setPixel(int* arrayX, int* arrayY, int length,
     }
 
     ReleaseDC(myConsole, myDC);
-}
-
-void displayWin::operator()(int* arrayX, int* arrayY, int length, 
-                            uint8_t r, uint8_t g, uint8_t b)
-{
-    setPixel(arrayX, arrayY, length, 0, 0, 0);
 }

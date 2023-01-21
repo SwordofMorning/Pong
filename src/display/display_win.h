@@ -16,14 +16,9 @@
 #include <stdint.h>
 
 class displayWin {
-protected:
-    /* Draw pixel on console */
-    void setPixel(int* arrayX, int* arrayY, int length, 
-                uint8_t r, uint8_t g, uint8_t b);
-
 public:
     /* Constructor */
-    displayWin(const int& width, const int& height);
+    displayWin();
 
     /**
      * @brief change image's position, 
