@@ -3,7 +3,7 @@
 /**
  * @file display_win.h
  * @author @SwordofMorning / xjt.include@gmail.com
- * @brief console display interface of Windows
+ * @brief Windows console pixel display interface
  * @version 0.1
  * @date 2023-01-20
  * 
@@ -21,13 +21,15 @@ public:
     displayWin();
 
     /**
-     * @brief change image's position, 
-     * first clear last image via setPixel(0, 0, 0), 
-     * next draw new image by setPixel(255, 255, 255).
+     * @brief Windows console pixel display interface
+     * which is a pixel control function via SetPixel()
      * 
-     * @param x new x coordinate
-     * @param y new y coordinate
-     * @return 0, success; others fail.
+     * @param arrayX pixel x-coordinate array
+     * @param arrayY pixel y-coordinate array
+     * @param length array length
+     * @param r red channel
+     * @param g green channel
+     * @param b blue channel
      */
     void operator()(int* arrayX, int* arrayY, int length, 
                     uint8_t r, uint8_t g, uint8_t b);

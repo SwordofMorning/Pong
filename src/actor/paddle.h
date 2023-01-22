@@ -2,8 +2,8 @@
 
 /**
  * @file paddle.h
- * @author your name (you@domain.com)
- * @brief 
+ * @author @SwordofMorning / xjt.include@gmail.com
+ * @brief ping-pong paddle
  * @version 0.1
  * @date 2023-01-21
  * 
@@ -12,15 +12,24 @@
  */
 
 #include "actor.h"
+#include "../display/display.h"
 
 class paddle : public actor {
 private:
-    /* paddle width and height */
+    /**
+     * @brief paddle width and height which is a rectangle.
+     * @param posXY is the upper left corner of rectangle.
+     */
     const int m_width, m_height;
 
+    virtual void clearLastImage();
+
+    virtual void drawNewImage();
+
 public:
+    /* constructor */
     paddle(const int& width, const int& height, 
-            int* xPtr, int* yPtr);
+            int* posX, int* posY, int* lastX, int* lastY);
 
     void draw(int posX, int posY);
 };

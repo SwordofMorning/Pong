@@ -11,8 +11,6 @@
  * 
  */
 
-#include "../display/display.h"
-
 class actor {
 protected:
     /* actor's now postion */
@@ -20,13 +18,10 @@ protected:
 
     /* actor's old postion */
     int *m_lastX, *m_lastY;
-    
-    /* display interface */
-    display m_disp;
 
-    void clearLastImage();
+    virtual void clearLastImage() = 0;
 
-    void drawNewImage();
+    virtual void drawNewImage() = 0;
 
 public:
     /* constructor */
