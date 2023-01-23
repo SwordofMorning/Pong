@@ -27,10 +27,10 @@
 #define PANEL_HEIGHT 400
 
 /* Ping-Pong paddle width */
-#define PADDLE_WIDTH 5
+#define PADDLE_WIDTH 20
 
 /* Ping-Pong paddle Height */
-#define PADDLE_Height 20
+#define PADDLE_HEIGHT 100
 
 /* Ping-Pong ball radius */
 #define BALL_RADIUS 3

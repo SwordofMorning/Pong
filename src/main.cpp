@@ -1,14 +1,14 @@
 #include <iostream>
+#include "config.h"
 #include "display/display.h"
 #include "actor/paddle.h"
 
 int main()
 {
-    paddle pd(100, 100, 0, 0, 0, 0);
+    int tmp = 0;
+    paddle pd{PADDLE_WIDTH, PADDLE_HEIGHT, &tmp, &tmp, &tmp, &tmp};
 
-    pd.test();
-    
-    Sleep(5);
+    pd.updateImage();
 
     return 0;
 }

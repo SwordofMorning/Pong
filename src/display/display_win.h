@@ -24,9 +24,9 @@ public:
      * @brief Windows console pixel display interface
      * which is a pixel control function via SetPixel()
      * 
-     * @param arrayX pixel x-coordinate array
-     * @param arrayY pixel y-coordinate array
-     * @param length array length
+     * @param arrayX position sequence: x-coordinate
+     * @param arrayY position sequence: y-coordinate
+     * @param length sequence length
      * @param r red channel
      * @param g green channel
      * @param b blue channel

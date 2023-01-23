@@ -21,13 +21,40 @@ protected:
     /* actor's old postion */
     int *m_lastX, *m_lastY;
 
+    /**
+     * @brief draw image via class_display
+     * 
+     * @param x actor's x-coordinate
+     * @param y actor's y-coordinate
+     * @param r red channel
+     * @param g green channel
+     * @param b blue channel
+     */
     virtual void imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b) = 0;
 
+    /**
+     * @brief clear image i.e. set black for last image
+     */
     virtual void clearLastImage() = 0;
 
+    /**
+     * @brief set new image i.e. draw write image
+     */
     virtual void drawNewImage() = 0;
 
 public:
-    /* constructor */
+    /**
+     * @brief Construct a new actor object
+     * 
+     * @param posX actor's new postion: x-coordinate
+     * @param posY actor's new postion: y-coordinate
+     * @param lastX actor's old postion: x-coordinate
+     * @param lastY actor's old postion: y-coordinate
+     */
     actor(int* posX, int* posY, int* lastX, int* lastY);
+
+    /**
+     * @brief clear last image, then draw new image.
+     */
+    virtual void updateImage() = 0;
 };

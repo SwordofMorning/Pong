@@ -38,7 +38,8 @@ void paddle::drawNewImage()
     imageInterface(*m_posX, *m_posY, 255, 255, 255);
 }
 
-void paddle::test()
+void paddle::updateImage()
 {
-    imageInterface(0, 0, 255, 255, 255);
+    clearLastImage();
+    drawNewImage();
 }

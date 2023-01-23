@@ -16,10 +16,22 @@
 
 class display {
 private:
+    /* windows display interface */
     displayWin m_dispW;
 public:
+    /* constructor */
     display();
 
+    /**
+     * @brief set pixel
+     * 
+     * @param arrayX position sequence: x-coordinate
+     * @param arrayY position sequence: y-coordinate
+     * @param length sequence length
+     * @param r red channel
+     * @param g green channel
+     * @param b blue channel
+     */
     void operator()(int* arrayX, int* arrayY, int length, 
                     uint8_t r, uint8_t g, uint8_t b);
 };

@@ -22,18 +22,40 @@ private:
      */
     const int m_width, m_height;
 
+    /**
+     * @brief draw image via class_display
+     * 
+     * @param x actor's x-coordinate
+     * @param y actor's y-coordinate
+     * @param r red channel
+     * @param g green channel
+     * @param b blue channel
+     */
     virtual void imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b);
 
+    /**
+     * @brief clear image i.e. set black for last image
+     */
     virtual void clearLastImage();
 
+    /**
+     * @brief set new image i.e. draw write image
+     */
     virtual void drawNewImage();
 
 public:
-    /* constructor */
+    /**
+     * @brief Construct a new paddle object
+     * 
+     * @param width paddle's width
+     * @param height paddle's height
+     * @param posX actor's new postion: x-coordinate
+     * @param posY actor's new postion: y-coordinate
+     * @param lastX actor's old postion: x-coordinate
+     * @param lastY actor's old postion: y-coordinate
+     */
     paddle(const int& width, const int& height, 
             int* posX, int* posY, int* lastX, int* lastY);
 
-    void draw(int posX, int posY);
-
-    void test();
+    virtual void updateImage();
 };
