@@ -2,6 +2,8 @@ SET(
     SRC_LIST
     display/display_win.cpp
     display/display.cpp
+    actor/actor.cpp
+    actor/paddle.cpp
     main.cpp
 )
 

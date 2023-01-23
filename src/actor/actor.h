@@ -11,6 +11,8 @@
  * 
  */
 
+#include <stdint.h>
+
 class actor {
 protected:
     /* actor's now postion */
@@ -18,6 +20,8 @@ protected:
 
     /* actor's old postion */
     int *m_lastX, *m_lastY;
+
+    virtual void imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b) = 0;
 
     virtual void clearLastImage() = 0;
 

@@ -8,7 +8,7 @@ paddle::paddle(const int& width, const int& height,
     // nothing
 }
 
-void paddle::clearLastImage()
+void paddle::imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b)
 {
     int* arrayX = new int[m_width * m_height];
     int* arrayY = new int[m_width * m_height];
@@ -17,18 +17,28 @@ void paddle::clearLastImage()
     {
         for (int j = 0; j < m_height; ++j)
         {
-            *arrayX++ = *m_lastX + i;
-            *arrayY++ = *m_lastY + j;
+            arrayX[i * m_height + j] = x + i;
+            arrayY[i * m_height + j] = y + j;
         }
     }
 
-    display()(arrayX, arrayY, m_width * m_height, 0, 0, 0);
+    display()(arrayX, arrayY, m_width * m_height, r, g, b);
 
     delete[] arrayX;
     delete[] arrayY;
 }
 
+void paddle::clearLastImage()
+{
+    imageInterface(*m_lastX, *m_lastY, 0, 0, 0);
+}
+
 void paddle::drawNewImage()
 {
+    imageInterface(*m_posX, *m_posY, 255, 255, 255);
+}
 
+void paddle::test()
+{
+    imageInterface(0, 0, 255, 255, 255);
 }

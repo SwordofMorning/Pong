@@ -22,6 +22,8 @@ private:
      */
     const int m_width, m_height;
 
+    virtual void imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b);
+
     virtual void clearLastImage();
 
     virtual void drawNewImage();
@@ -32,4 +34,6 @@ public:
             int* posX, int* posY, int* lastX, int* lastY);
 
     void draw(int posX, int posY);
+
+    void test();
 };
