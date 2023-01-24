@@ -4,6 +4,7 @@ SET(
     display/display.cpp
     actor/actor.cpp
     actor/paddle.cpp
+    actor/ball.cpp
     main.cpp
 )
 

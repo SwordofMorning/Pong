@@ -11,7 +11,10 @@
  * 
  */
 
+#include <vector>
+#include <utility>
 #include "../config.h"
+#include "../display/display.h"
 #include "actor.h"
 
 class ball : public actor {
@@ -42,6 +45,12 @@ private:
      * @brief set new image i.e. draw write image
      */
     virtual void drawNewImage();
+
+    /**
+     * @brief Bresenham's circle algorithm
+     * 
+     */
+    std::vector<std::pair<int, int>> BresenhamCircle(int x, int y, int r);
 
 public:
     /**
