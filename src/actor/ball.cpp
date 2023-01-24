@@ -53,20 +53,15 @@ std::vector<std::pair<int, int>> ball::BresenhamCircle(int x, int y, int r)
     while (addX < addY)
     {
         addX++;
-        // if (p < 0)
-        // {
-        //     p += 2 * addX + 1;
-        // }
-        // else
-        // {
-        //     addY--;
-        //     p += 2 * (addX - addY) + 1;
-        // }
-        p += (p < 0) ? 
-            (2 * addX + 1) :
-            2 * (addX - --addY) + 1;
+
+        p += (p < 0) ? (2 * addX + 1) : 2 * (addX - --addY) + 1;
 
         addPoint(retval, x, y, addX, addY);
+
+        // fill circle
+        for (int i = 0; i <= addX; ++i)
+            for (int j = 0; j <= addY; ++j)
+                addPoint(retval, x, y, i, j);
     }
 
     return retval;
