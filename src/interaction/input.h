@@ -3,7 +3,7 @@
 /**
  * @file input.h
  * @author @SwordofMorning / xjt.include@gmail.com
- * @brief 
+ * @brief catch user's input event
  * @version 0.1
  * @date 2023-01-24
  * 
@@ -16,8 +16,6 @@
 #include <conio.h>
 
 class input {
-private:
-
 public:
     /* constructor */
     input();

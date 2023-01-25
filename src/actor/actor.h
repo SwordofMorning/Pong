@@ -16,10 +16,7 @@
 class actor {
 protected:
     /* actor's now postion */
-    int *m_posX, *m_posY;
-
-    /* actor's old postion */
-    int *m_lastX, *m_lastY;
+    int m_posX, m_posY;
 
     /**
      * @brief draw image via class_display
@@ -48,13 +45,13 @@ public:
      * 
      * @param posX actor's new postion: x-coordinate
      * @param posY actor's new postion: y-coordinate
-     * @param lastX actor's old postion: x-coordinate
-     * @param lastY actor's old postion: y-coordinate
      */
-    actor(int* posX, int* posY, int* lastX, int* lastY);
+    actor(int posX, int posY);
 
     /**
      * @brief clear last image, then draw new image.
      */
     virtual void updateImage() = 0;
+
+    virtual void move() = 0;
 };

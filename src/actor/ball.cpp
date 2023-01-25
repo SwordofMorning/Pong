@@ -1,8 +1,7 @@
 #include "ball.h"
 
-ball::ball(const int& radius, 
-    int* posX, int* posY, int* lastX, int* lastY) :
-    actor(posX, posY, lastX, lastY), 
+ball::ball(const int& radius, int posX, int posY) :
+    actor(posX, posY), 
     m_radius(radius)
 {
     // nothing
@@ -69,12 +68,12 @@ std::vector<std::pair<int, int>> ball::BresenhamCircle(int x, int y, int r)
 
 void ball::clearLastImage()
 {
-    imageInterface(*m_lastX, *m_lastY, 0, 0, 0);
+    imageInterface(m_posX, m_posY, 0, 0, 0);
 }
 
 void ball::drawNewImage()
 {
-    imageInterface(*m_posX, *m_posY, 255, 255, 255);
+    imageInterface(m_posX, m_posY, 255, 255, 255);
 }
 
 void ball::updateImage()

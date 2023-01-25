@@ -51,11 +51,10 @@ public:
      * @param height paddle's height
      * @param posX actor's new postion: x-coordinate
      * @param posY actor's new postion: y-coordinate
-     * @param lastX actor's old postion: x-coordinate
-     * @param lastY actor's old postion: y-coordinate
      */
-    paddle(const int& width, const int& height, 
-            int* posX, int* posY, int* lastX, int* lastY);
+    paddle(const int& width, const int& height, int posX, int posY);
 
     virtual void updateImage();
+
+    virtual void move();
 };

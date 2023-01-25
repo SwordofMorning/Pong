@@ -1,8 +1,7 @@
 #include "paddle.h"
 
-paddle::paddle(const int& width, const int& height, 
-        int* posX, int* posY, int* lastX, int* lastY) :
-        actor(posX, posY, lastX, lastY), 
+paddle::paddle(const int& width, const int& height, int posX, int posY) :
+        actor(posX, posY), 
         m_width(width), m_height(height)
 {
     // nothing
@@ -30,12 +29,12 @@ void paddle::imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b)
 
 void paddle::clearLastImage()
 {
-    imageInterface(*m_lastX, *m_lastY, 0, 0, 0);
+    imageInterface(m_posX, m_posY, 0, 0, 0);
 }
 
 void paddle::drawNewImage()
 {
-    imageInterface(*m_posX, *m_posY, 255, 255, 255);
+    imageInterface(m_posX, m_posY, 255, 255, 255);
 }
 
 void paddle::updateImage()

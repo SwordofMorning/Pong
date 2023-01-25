@@ -59,11 +59,10 @@ public:
      * @param radius radius of ball
      * @param posX actor's new postion: x-coordinate
      * @param posY actor's new postion: y-coordinate
-     * @param lastX actor's old postion: x-coordinate
-     * @param lastY actor's old postion: y-coordinate
      */
-    ball(const int& radius, 
-            int* posX, int* posY, int* lastX, int* lastY);
+    ball(const int& radius, int posX, int posY);
 
     virtual void updateImage();
+
+    virtual void move();
 };
