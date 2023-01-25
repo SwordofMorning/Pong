@@ -48,10 +48,5 @@ public:
      */
     actor(int posX, int posY);
 
-    /**
-     * @brief clear last image, then draw new image.
-     */
-    virtual void updateImage() = 0;
-
     virtual void move() = 0;
 };

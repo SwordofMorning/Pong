@@ -62,7 +62,5 @@ public:
      */
     ball(const int& radius, int posX, int posY);
 
-    virtual void updateImage();
-
     virtual void move();
 };

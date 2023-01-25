@@ -43,6 +43,15 @@ private:
      */
     virtual void drawNewImage();
 
+    /**
+     * @brief Check whether the remaining amount 
+     * with the boundary supports the next move 
+     * 
+     * @param direction 0, up; 1 down
+     * @return 0, cant move; 1 can move
+     */
+    bool boundary(bool direction);
+
 public:
     /**
      * @brief Construct a new paddle object
@@ -54,7 +63,10 @@ public:
      */
     paddle(const int& width, const int& height, int posX, int posY);
 
-    virtual void updateImage();
-
-    virtual void move();
+    /**
+     * @brief move paddle
+     * 
+     * @param direction 0, up; 1 down
+     */
+    virtual void move(bool direction);
 };

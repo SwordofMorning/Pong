@@ -32,5 +32,11 @@
 /* Ping-Pong paddle Height */
 #define PADDLE_HEIGHT 100
 
+/* Ping-Pong paddle move pixel each time */
+#define PADDLE_MOVE_SPEED 5
+
 /* Ping-Pong ball radius */
 #define BALL_RADIUS 3
+
+/* Ping-Pong ball move pixel each time */
+#define BALL_MOVE_SPEED 20

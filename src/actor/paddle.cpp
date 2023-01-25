@@ -37,8 +37,31 @@ void paddle::drawNewImage()
     imageInterface(m_posX, m_posY, 255, 255, 255);
 }
 
-void paddle::updateImage()
+bool paddle::boundary(bool direction)
 {
+    // if move down
+    if (direction)
+    {
+        if (m_posY + PADDLE_HEIGHT + PADDLE_MOVE_SPEED > PANEL_HEIGHT) return false;
+    }
+    // else mov up
+    else
+    {
+        if (m_posY - PADDLE_MOVE_SPEED < 0) return false;
+    }
+
+    return true;
+}
+
+void paddle::move(bool direction)
+{
+    /* step 1 : check boundary */
+    if (!boundary(direction)) return;
+
+    /* step 2 : clear last image */
     clearLastImage();
+
+    /* step 3 : draw new image */
+    m_posY += direction ? PADDLE_MOVE_SPEED : -PADDLE_MOVE_SPEED;
     drawNewImage();
 }

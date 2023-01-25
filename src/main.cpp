@@ -15,13 +15,13 @@ int main()
     //     if (ch != 0x00) std:: cout << ch << std::endl;
     // }
 
-    paddle pd{ 50, 50, 100, 100};
+    // paddle pd{ 50, 50, 100, 100};
 
-    pd.updateImage();
+    // pd.updateImage();
 
-    ball bl{ 20, 200, 200 };
+    // ball bl{ 20, 200, 200 };
 
-    bl.updateImage();
+    // bl.updateImage();
 
     return 0;
 }
