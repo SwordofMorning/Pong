@@ -5,7 +5,7 @@ SET(
     actor/actor.cpp
     actor/paddle.cpp
     actor/ball.cpp
-    interaction/input.h
+    interaction/input.cpp
     main.cpp
 )
 

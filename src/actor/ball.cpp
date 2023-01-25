@@ -21,7 +21,7 @@ void ball::imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b)
         arrayY[i] = points[i].second;
     }
 
-    display()(arrayX, arrayY, points.size(), r, g, b);
+    display()(arrayX, arrayY, int(points.size()), r, g, b);
 
     delete[] arrayX;
     delete[] arrayY;
