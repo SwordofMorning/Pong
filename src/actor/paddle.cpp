@@ -39,16 +39,10 @@ void paddle::drawNewImage()
 
 bool paddle::boundary(bool direction)
 {
-    // if move down
-    if (direction)
-    {
+    if (direction)  // move down
         if (m_posY + PADDLE_HEIGHT + PADDLE_MOVE_SPEED > PANEL_HEIGHT) return false;
-    }
-    // else mov up
-    else
-    {
+    else            // move up
         if (m_posY - PADDLE_MOVE_SPEED < 0) return false;
-    }
 
     return true;
 }

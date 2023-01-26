@@ -75,3 +75,20 @@ void ball::drawNewImage()
 {
     imageInterface(m_posX, m_posY, 255, 255, 255);
 }
+
+bool ball::boundary(bool dirX, bool dirY)
+{
+    /* x-coordinate boundary check */
+    if (dirX)   // move left
+        if (m_posX - m_radius - m_speedX < 0) return false;
+    else        // move right
+        if (m_posX + m_radius + m_speedX > PANEL_WIDTH) return false;
+
+    /* y-coordinate boundary check */
+    if (dirY)   // move up
+        if (m_posY - m_radius - m_speedY < 0) return false;
+    else        // move down
+        if (m_posY + m_radius + m_posY > PANEL_HEIGHT) return false;
+
+    return true;
+}

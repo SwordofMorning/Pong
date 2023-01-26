@@ -45,7 +45,7 @@ private:
 
     /**
      * @brief Check whether the remaining amount 
-     * with the boundary supports the next move 
+     * with the boundary supports the next move.
      * 
      * @param direction 0, up; 1 down
      * @return 0, cant move; 1 can move
