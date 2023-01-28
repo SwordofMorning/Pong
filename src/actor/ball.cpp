@@ -1,10 +1,12 @@
 #include "ball.h"
 
-ball::ball(const int& radius, int posX, int posY) :
+ball::ball(const int& radius, int posX, int posY, 
+    const int& speedX = 1, const int& speedY = 0) :
     actor(posX, posY), 
     m_radius(radius)
 {
-    // nothing
+    m_speedX = speedX;
+    m_speedY = speedY;
 }
 
 void ball::imageInterface(int x, int y, uint8_t r, uint8_t g, uint8_t b)
@@ -76,19 +78,15 @@ void ball::drawNewImage()
     imageInterface(m_posX, m_posY, 255, 255, 255);
 }
 
-bool ball::boundary(bool dirX, bool dirY)
+void ball::move()
 {
-    /* x-coordinate boundary check */
-    if (dirX)   // move left
-        if (m_posX - m_radius - m_speedX < 0) return false;
-    else        // move right
-        if (m_posX + m_radius + m_speedX > PANEL_WIDTH) return false;
+    /* step 1 : clear */
+    clearLastImage();
 
-    /* y-coordinate boundary check */
-    if (dirY)   // move up
-        if (m_posY - m_radius - m_speedY < 0) return false;
-    else        // move down
-        if (m_posY + m_radius + m_posY > PANEL_HEIGHT) return false;
+    /* step 2 : update pos */
+    m_posX += m_speedX;
+    m_posY += m_speedY;
 
-    return true;
+    /* step 3 : new */
+    drawNewImage();
 }

@@ -27,8 +27,13 @@ private:
      */
     const int m_radius;
 
-    /* move speed for x and y coordinate */
-    int m_speedX, m_speedY;
+    /**
+     * @brief move speed for x and y coordinate
+     * @note which have direction, 
+     * for speedX: +, right; - left.
+     * for speedY: +, down; - up.
+     */
+    double m_speedX, m_speedY;
 
 /* ===== function ===== */
     /**
@@ -58,27 +63,6 @@ private:
      */
     std::vector<std::pair<int, int>> BresenhamCircle(int x, int y, int r);
 
-    /**
-     * @brief Check whether the remaining amount 
-     * with the boundary supports the next move. 
-     * 
-     * @note If the remaining space has room to move, then move. 
-     * If there is no margin, move to the boundary and do reflection calculations at the same time.
-     * @ref toBoundary()
-     * 
-     * 如果不能移动一个完整的步长（|vector_velocity_x + vector_velocity_y| = BALL_MOVE_SPEED），则移动到边界，并计算反射。
-     * 
-     * @param dirX 0, left; 1 right
-     * @param dirY 0, up; 1 down
-     */
-    bool boundary(bool dirX, bool dirY);
-
-    /**
-     * @brief 不满足一个完整步长的单次移动
-     * 
-     */
-    void toBoundary();
-
 public:
     /**
      * @brief Construct a new ball object
@@ -87,7 +71,11 @@ public:
      * @param posX actor's new postion: x-coordinate
      * @param posY actor's new postion: y-coordinate
      */
-    ball(const int& radius, int posX, int posY);
+    ball(const int& radius, int posX, int posY, 
+        const int& speedX = 1, const int& speedY = 0);
 
+    /**
+     * @brief move function
+     */
     virtual void move();
 };
