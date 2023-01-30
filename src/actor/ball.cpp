@@ -90,3 +90,8 @@ void ball::move()
     /* step 3 : new */
     drawNewImage();
 }
+
+std::pair<double, double> ball::getSpeed()
+{
+    return std::make_pair(m_speedX, m_speedY);
+}

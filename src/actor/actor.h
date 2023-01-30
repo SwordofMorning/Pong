@@ -49,7 +49,5 @@ public:
      */
     actor(int posX, int posY);
 
-    virtual void move() = 0;
-
     std::pair<int, int> getPos();
 };

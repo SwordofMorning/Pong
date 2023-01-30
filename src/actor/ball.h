@@ -77,5 +77,7 @@ public:
     /**
      * @brief move function
      */
-    virtual void move();
+    void move();
+
+    std::pair<double, double> getSpeed();
 };

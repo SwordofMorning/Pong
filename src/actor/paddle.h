@@ -68,5 +68,5 @@ public:
      * 
      * @param direction 0, up; 1 down
      */
-    virtual void move(bool direction);
+    void move(bool direction);
 };
