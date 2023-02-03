@@ -46,5 +46,16 @@ bool collision::ball_right_paddle(ball p_ball, paddle p_paddle)
     // point C of rectangle
     std::pair<int, int> paddleC = std::make_pair(paddleA.first, paddleA.second + PADDLE_HEIGHT);
 
-    
+    // point B of circle
+    std::pair<int, int> ballB = std::make_pair(ballCenter.first + BALL_RADIUS, ballCenter.second + BALL_RADIUS);
+    // point D of circle
+    std::pair<int, int> ballD = std::make_pair(ballCenter.first + BALL_RADIUS, ballCenter.second - BALL_RADIUS);
+
+    // x
+    if (ballB.first < paddleA.first) return false;
+
+    // y
+    if (ballB.second >= paddleC.second && ballD.second <= paddleA.second) return true;
+
+    return false;
 }
